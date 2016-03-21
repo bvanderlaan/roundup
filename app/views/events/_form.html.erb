@@ -20,15 +20,15 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= f.label :location, "Event's Location" %><br>
     <%= f.text_field :location, maxlength: "72" %>
   </div>
   <div class="field">
-    <%= f.label :startdatetime %><br>
+    <%= f.label :startdatetime, "Event's Start Date and Time" %><br>
     <%= f.datetime_local_field :startdatetime %>
   </div>
   <div class="field">
-    <%= f.label :duration %><br>
+    <%= f.label :duration, "How long will the event be in minutes" %><br>
     <%= f.number_field :duration %>
   </div>
   <div class="actions">
