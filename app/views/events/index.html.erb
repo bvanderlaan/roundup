@@ -15,8 +15,8 @@
       </time>
     </div>
     <div class="controls">
-        <p><%= link_to 'Edit', edit_event_path(event) %> 
-           <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p><%= link_to 'Edit', edit_event_path(event), { :class=>"button" } %> 
+           <%= link_to 'Destroy', event, method: :delete, :class=>"button", data: { confirm: 'Are you sure?' } %></p>
     </div>
     <div class="title">
       <h2><%= link_to "#{event.title}", event %></h2>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, :class=>"button" %>

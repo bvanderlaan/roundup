@@ -28,7 +28,7 @@ ul#eventlist li div:first-child {
 	padding-right: 0px;
 }
 
-.datetime {
+ul#eventlist .datetime {
 	float: left;
 }
 
@@ -50,6 +50,27 @@ ul#eventlist li div:first-child {
 	vertical-align: top;
 	margin-left: 3px;
 	padding-bottom: 1px;
+}
+
+#eventView .location p,
+#eventView .datetime p.date {
+	font-weight: bold;
+}
+
+#eventView .location p {
+	font-size: 16px;
+}
+
+#eventView hr {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+#eventView h1 {
+	float: left;
+}
+#eventView #editButton {
+	float: right;
 }
 
 .title {
@@ -79,10 +100,15 @@ ul#eventlist li div:first-child {
 	float: right;
 }
 
+#eventView,
 #eventForm {
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%;
+	background-color: #FFF;
+	padding: 15px;
+	border-radius: 3px;
+    border: 1px solid #ddd!important;
 }
 
 #eventForm textarea {
@@ -100,6 +126,7 @@ label {
 
 .button {
 	color: #fff!important;
+    text-decoration: none;
     background: #1165f0;
     background: -webkit-gradient(linear,left top,left bottom,from(#4184f3),to(#1165f0));
     background: -moz-linear-gradient(top,#4184f3,#1165f0);
