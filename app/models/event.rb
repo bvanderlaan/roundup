@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 	          length: { maximum: 72 }
 	validates :description, presence: true
 	validates :location, presence: true,
-	          length: { maximum: 147 }
+	          length: { maximum: 72 }
 	validates :duration, presence: true,
 			  numericality: { only_integer: true, 
 			  	              greater_than_or_equal_to: 30,
