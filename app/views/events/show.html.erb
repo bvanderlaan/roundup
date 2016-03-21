@@ -17,10 +17,9 @@
   <div class="location">
     <p><%= @event.location %></p>
   </div>
-  <p class="description"><%= @event.description %></p>
-  <div>
-    <hr />
-  </div>
+  <hr />
+  <pre class="description"><%= @event.description %></pre>
+  <hr />
   
   <%= link_to 'Back to Events', events_path, { :class=>"button" } %>
 </div>
