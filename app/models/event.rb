@@ -18,4 +18,8 @@ class Event < ActiveRecord::Base
 	      errors.add(:startdatetime, "The event can't be in the past")
 	    end
 	end
+
+	def to_s
+		title
+	end
 end
