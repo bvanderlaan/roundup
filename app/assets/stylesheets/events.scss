@@ -61,14 +61,18 @@ ul#eventlist .datetime {
 	font-size: 16px;
 }
 
+#userView hr,
 #eventView hr {
 	margin-top: 5px;
 	margin-bottom: 10px;
 }
 
+#userView h1,
 #eventView h1 {
 	float: left;
 }
+
+#userView #editButton,
 #eventView #editButton {
 	float: right;
 }
@@ -109,6 +113,7 @@ ul#eventlist .datetime {
 }
 
 #userForm,
+#userView,
 #eventView,
 #eventForm {
 	margin-left: auto;

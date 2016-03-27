@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>User name:</strong>
-  <%= @user.user_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div id="userView">
+  <div>
+    <h1><%= @user.to_s %></h1>
+    <%= link_to 'Edit', edit_user_path(@user), { :class=>"button", :id=>"editButton"} %>
+  </div>
+  <div style="clear: both;"></div>
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>User name:</strong>
+    <%= @user.user_name %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+  <hr />
+  <%= link_to 'Back to users', users_path, { :class=>"button" } %>
+</div>
