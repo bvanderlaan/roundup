@@ -1,7 +1,9 @@
 <div id="eventView" class="roundupform">
   <div>
     <h1><%= @event.title %></h1>
+    <% if current_user && current_user == @event.user %>
     <%= link_to 'Edit', edit_event_path(@event), { :class=>"button", :id=>"editButton"} %>
+    <% end %>
   </div>
   <div style="clear: both;"></div>
   <p id="notice"><%= notice %></p>

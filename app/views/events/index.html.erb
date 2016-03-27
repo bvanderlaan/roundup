@@ -14,10 +14,12 @@
         </p>
       </time>
     </div>
+    <% if current_user && current_user == event.user %>
     <div class="controls">
         <p><%= link_to 'Edit', edit_event_path(event), { :class=>"button" } %> 
            <%= link_to 'Destroy', event, method: :delete, :class=>"button", data: { confirm: 'Are you sure?' } %></p>
     </div>
+    <% end %>
     <div class="title">
       <h2><%= link_to "#{event.title}", event %></h2>
     </div>
@@ -26,6 +28,7 @@
 </ul>
 
 <br>
+
 <% if current_user %>
 <%= link_to 'New Event', new_event_path, :class=>"button" %>
 <% end %>
