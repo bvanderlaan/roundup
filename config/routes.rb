@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
 
   resources :users
   resources :events
@@ -12,8 +11,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'events#index'
-
-  get 'signup' => "users#new"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
