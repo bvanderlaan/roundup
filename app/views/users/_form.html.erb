@@ -37,6 +37,8 @@
   </div>
   <div class="actions">
     <%= f.submit :class=>"button" %>
-    <%= link_to "Don't Save", @user, { :class=>"button" } %>
+    <% unless @user.new_record? %>
+      <%= link_to "Don't Save", @user, { :class=>"button" } %>
+    <% end %>
   </div>
 <% end %>
