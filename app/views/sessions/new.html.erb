@@ -1,2 +1,18 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div id="loginForm" class="roundupform">
+	<h1>Log In</h1>
+	<p id="notice"><%= params[:notice] %></p>
+
+	<%= form_tag sessions_path do %>
+		<div class="field">
+			<%= label_tag :email %><br/>
+			<%= email_field_tag :email %>
+		</div>
+		<div class="field">
+			<%= label_tag :password %><br/>
+			<%= password_field_tag :password %>
+		</div>
+		<div class="actions">
+			<%= submit_tag "Log In", { :class=>"button" } %>
+		</div>
+	<% end %>
+</div>
