@@ -61,8 +61,7 @@ ul#eventlist .datetime {
 	font-size: 16px;
 }
 
-#userView hr,
-#eventView hr {
+.roundupform hr {
 	margin-top: 5px;
 	margin-bottom: 10px;
 }
@@ -72,8 +71,7 @@ ul#eventlist .datetime {
 	float: left;
 }
 
-#userView #editButton,
-#eventView #editButton {
+.roundupform #editButton {
 	float: right;
 }
 
@@ -112,10 +110,7 @@ ul#eventlist .datetime {
 	float: right;
 }
 
-#userForm,
-#userView,
-#eventView,
-#eventForm {
+.roundupform {
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%;
@@ -130,10 +125,9 @@ ul#eventlist .datetime {
 	height: 100px;
 }
 
-#userForm input[type="email"],
-#userForm input[type="password"],
-#userForm input[type="text"],
-#eventForm input[type="text"] {
+.roundupform input[type="email"],
+.roundupform input[type="password"],
+.roundupform input[type="text"] {
 	width: 100%;
 }
 
