@@ -15,7 +15,7 @@
 	<div id="user_menu">
 		<ul>
 			<% if current_user %>
-			<li>Hi <%= current_user.to_s %></li>
+			<li>Hi <%= link_to current_user.to_s, current_user %></li>
 			<li><%= link_to "Log Out", logout_path, { :class =>"button" } %></li>
 			<% else %>
 			<li><%= link_to "Sign Up", signup_path, { :class =>"button" } %></li>
