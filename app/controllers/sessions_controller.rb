@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to root_url
   	else
-  		redirect_to :action => 'new', notice: 'Your user name or password was not found or did not match our records.'
+  		redirect_to login_url, notice: 'Your user name or password was not found or did not match our records.'
   	end
   end
 
