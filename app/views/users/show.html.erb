@@ -1,7 +1,9 @@
 <div id="userView" class="roundupform">
   <div>
     <h1><%= @user.to_s %></h1>
-    <%= link_to 'Edit', edit_user_path(@user), { :class=>"button", :id=>"editButton"} %>
+    <% if current_user && current_user == @user %>
+      <%= link_to 'Edit', edit_user_path(@user), { :class=>"button", :id=>"editButton"} %>
+    <% end %>
   </div>
   <div style="clear: both;"></div>
   <p id="notice"><%= notice %></p>
