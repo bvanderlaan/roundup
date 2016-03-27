@@ -108,6 +108,7 @@ ul#eventlist .datetime {
 	float: right;
 }
 
+#userForm,
 #eventView,
 #eventForm {
 	margin-left: auto;
@@ -124,6 +125,9 @@ ul#eventlist .datetime {
 	height: 100px;
 }
 
+#userForm input[type="email"],
+#userForm input[type="password"],
+#userForm input[type="text"],
 #eventForm input[type="text"] {
 	width: 100%;
 }
