@@ -53,6 +53,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def changepassword
+    set_user
+  end
+
+  def editpassword
+    set_user
+    if user_params[:password].blank?
+        @user.errors.add(:password, "Password can't be blank.")
+        render :changepassword
+    else
+      if @user.update(user_params)
+         redirect_to @user, notice: 'Password was successfully updated.'
+      else
+         render :changepassword
+      end
+    end
+  end
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy

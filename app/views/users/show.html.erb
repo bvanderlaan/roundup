@@ -15,4 +15,8 @@
     <strong>Email:</strong>
     <%= @user.email %>
   </p>
+  <hr />
+  <% if current_user && current_user == @user %>
+      <%= link_to 'Change Password', changepassword_user_path(@user), { :class=>"button", :id=>"changePasswordButton"} %>
+    <% end %>
 </div>

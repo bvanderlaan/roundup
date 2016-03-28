@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
   get 'signup' => 'users#new'
 
-  resources :users
+  resources :users do
+    member do
+      patch :editpassword
+      get :changepassword
+    end
+  end
+
   resources :events
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
