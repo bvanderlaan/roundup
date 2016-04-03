@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 	belongs_to :user
 	has_many :rsvps
-	has_many :attendies, through: :rsvps
+	has_many :attendies, :class_name => 'User', :foreign_key => 'user_id', :through => :rsvps, :source => :user
 	
 	validates :title, presence: true,
 	          length: { maximum: 72 }
