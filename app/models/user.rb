@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :events, dependent: :destroy
   has_many :rsvps
-  has_many :events, through: :rsvps
+  has_many :attending_events, through: :rsvps
 
   has_secure_password
   before_save { self.email = email.downcase }
