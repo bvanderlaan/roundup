@@ -9,10 +9,6 @@ class User < ActiveRecord::Base
             presence: true
   validates :last_name,
             presence: true
-  validates :user_name, 
-  			presence: true,
-            length: { maximum: 72 },
-            uniqueness: { case_sensitive: false }
   validates :email, 
   			presence: true,
             length: { maximum: 255 }, 
