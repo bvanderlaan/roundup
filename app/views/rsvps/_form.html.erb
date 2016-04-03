@@ -1,0 +1,23 @@
+<div>
+<%= form_for(@rsvp) do |f| %>
+  <% if @rsvp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rsvp.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @rsvp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= hidden_field_tag :event_id, @event.id %>
+  <div class="field">
+    <%= f.label :is_going %><br>
+    <%= f.check_box :is_going %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class=>"button" %>
+  </div>
+<% end %>
+</div>

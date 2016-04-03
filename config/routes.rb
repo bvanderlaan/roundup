@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rsvps, only: [:new, :create, :update]
+
   resources :sessions, only: [:new, :create, :destroy]
   get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'

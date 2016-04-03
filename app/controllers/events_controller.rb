@@ -11,6 +11,11 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    if ( current_user.rsvps.exists?(event_id: @event.id) )
+      @rsvp = current_user.rsvps.find_by(event_id: @event.id)
+    else
+      @rsvp = Rsvp.new
+    end
   end
 
   # GET /events/new
