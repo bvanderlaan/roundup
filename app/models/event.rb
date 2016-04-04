@@ -26,4 +26,12 @@ class Event < ActiveRecord::Base
 	def to_s
 		title
 	end
+
+	def attendies_going
+		User.joins(:rsvps).uniq.where( "is_going = 1 and event_id = #{id}")
+	end
+
+	def attendies_not_going
+		User.joins(:rsvps).uniq.where( "is_going = 0 and event_id = #{id}")
+	end
 end

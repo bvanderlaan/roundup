@@ -89,6 +89,11 @@ ul#eventlist .datetime {
 	overflow: hidden;
 }
 
+#eventViewRSVPs hr,
+#eventViewDetails hr {
+	width: 80%;
+}
+
 #eventViewRSVPs {
 	float: right;
 	width: 165px;
