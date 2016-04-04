@@ -73,6 +73,7 @@ ul#eventlist .datetime {
 
 .roundupform #editButton {
 	float: right;
+	margin-right: 10px
 }
 
 #eventView pre {
@@ -81,6 +82,57 @@ ul#eventlist .datetime {
   	font-size: 13px;
   	line-height: 18px;
   	padding: 0px;
+}
+
+#eventViewDetails {
+	width: auto;
+	overflow: hidden;
+}
+
+#eventViewRSVPs {
+	float: right;
+	width: 165px;
+}
+
+#isGoingYes input,
+#isGoingNo input {
+	width: 100%
+}
+
+#isGoingYes {
+	margin-right: 5px;
+}
+
+#isGoingYes,
+#isGoingNo {
+	float: left;
+	width: 45%;
+}
+
+#rsvpNo,
+#rsvpYes {
+	display: table;
+	width: 100%;
+}
+
+#rsvpYes {
+	background-color: green;	
+}
+
+#rsvpNo {
+	background-color: red;
+}
+
+#rsvpNo h2,
+#rsvpYes h2 {
+	color: white;
+	text-align: center;
+}
+
+#rsvpNo input,
+#rsvpYes input { 
+	width: 90%;
+	margin-left: 10px;
 }
 
 .title {

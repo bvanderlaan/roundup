@@ -1,29 +1,39 @@
 <div id="eventView" class="roundupform">
-  <div>
-    <h1><%= @event.title %></h1>
-    <% if current_user && current_user == @event.user %>
-    <%= link_to 'Edit', edit_event_path(@event), { :class=>"button", :id=>"editButton"} %>
+<div id="eventViewRSVPs">
+    <% if @rsvp.is_going == true %>
+      <%= render 'rsvps/goingform' %>
+    <% elsif @rsvp.is_going == false %>
+      <%= render 'rsvps/notgoingform' %>
+    <% else %>
+      <%= render 'rsvps/form' %>
     <% end %>
   </div>
+  <div id="eventViewDetails">
+    <div>
+      <h1><%= @event.title %></h1>
+      <% if current_user && current_user == @event.user %>
+      <%= link_to 'Edit', edit_event_path(@event), { :class=>"button", :id=>"editButton"} %>
+      <% end %>
+    </div>
+    <div style="clear: both;"></div>
+    <p id="notice"><%= notice %></p>
+    <div class="datetime">
+      <time datetime=<%= "#{@event.startdatetime}"%>>
+        <p class="date"><%= @event.startdatetime.strftime("%A, %B %e, %Y") %></p>
+        <p>
+          <%= @event.startdatetime.strftime("%l:%M") %>
+          <span class="ampm"><%= @event.startdatetime.strftime("%p") %></span>
+        </p>
+      </time>
+    </div>
+    <div class="location">
+      <p><%= @event.location %></p>
+    </div>
+    <hr />
+    <pre class="description"><%= @event.description %></pre>
+    <hr />   
+    
+    <%= link_to 'Back to Events', events_path, { :class=>"button" } %>
+  </div>
   <div style="clear: both;"></div>
-  <p id="notice"><%= notice %></p>
-  <div class="datetime">
-    <time datetime=<%= "#{@event.startdatetime}"%>>
-      <p class="date"><%= @event.startdatetime.strftime("%A, %B %e, %Y") %></p>
-      <p>
-        <%= @event.startdatetime.strftime("%l:%M") %>
-        <span class="ampm"><%= @event.startdatetime.strftime("%p") %></span>
-      </p>
-    </time>
-  </div>
-  <div class="location">
-    <p><%= @event.location %></p>
-  </div>
-  <hr />
-  <pre class="description"><%= @event.description %></pre>
-  <hr />
-
-  <%= render 'rsvps/form' %>
-  
-  <%= link_to 'Back to Events', events_path, { :class=>"button" } %>
 </div>

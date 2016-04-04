@@ -15,6 +15,7 @@ class EventsController < ApplicationController
       @rsvp = current_user.rsvps.find_by(event_id: @event.id)
     else
       @rsvp = Rsvp.new
+      @rsvp.is_going = nil
     end
   end
 

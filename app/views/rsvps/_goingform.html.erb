@@ -1,5 +1,5 @@
-<div>
-	<h2>Are you going?</h2>
+<div id="rsvpYes">
+	<h2>Your RSVP: Yes</h2>
 	<% if @rsvp.errors.any? %>
 	    <div id="error_explanation">
 	      <h2><%= pluralize(@rsvp.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -11,23 +11,13 @@
 	      </ul>
 	    </div>
 	<% end %>
-	<div id="isGoingYes">
-		<%= form_for(@rsvp) do |f| %>
-		  <%= hidden_field_tag :event_id, @event.id %>
-		  <%= hidden_field_tag :is_going, 1 %>
-		  <div class="actions">
-		    <%= f.submit "Yes", :class=>"button" %>
-		  </div>
-		<% end %>
-	</div>
-	<div id="isGoingNo">
+	<div>
 		<%= form_for(@rsvp) do |f| %>
 		  <%= hidden_field_tag :event_id, @event.id %>
 		  <%= hidden_field_tag :is_going, 0 %>
 		  <div class="actions">
-		    <%= f.submit "No", :class=>"button" %>
+		    <%= f.submit "Can't make it.", :class=>"button" %>
 		  </div>
 		<% end %>
 	</div>
-	<div style="clear:both;"></div>
 </div>
