@@ -204,10 +204,8 @@ label {
     border: 1px solid #0c51c2;
     border-radius: 3px;
     position: relative;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 7px 5px 7px 5px;
+    display: inline-block;
 }
 
 #backButton {
