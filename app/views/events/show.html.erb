@@ -1,11 +1,13 @@
 <div id="eventView" class="roundupform">
   <div id="eventViewRSVPs">
-    <% if @rsvp.is_going == true %>
-      <%= render 'rsvps/goingform' %>
-    <% elsif @rsvp.is_going == false %>
-      <%= render 'rsvps/notgoingform' %>
-    <% else %>
-      <%= render 'rsvps/form' %>
+        <% if @event.user != current_user %>
+      <% if @rsvp.is_going == true %>
+        <%= render 'rsvps/goingform' %>
+      <% elsif @rsvp.is_going == false %>
+        <%= render 'rsvps/notgoingform' %>
+      <% else %>
+        <%= render 'rsvps/form' %>
+      <% end %>
     <% end %>
     <% numGoing = @event.attendies_going.count %>
     <% numNotGoing = @event.attendies_not_going.count %>
