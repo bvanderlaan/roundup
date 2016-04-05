@@ -1,18 +1,24 @@
 <div id="eventView" class="roundupform">
   <div id="eventViewRSVPs">
-    <% if current_user && @event.user != current_user %>
-      <% if @rsvp.is_going == true %>
-        <%= render 'rsvps/goingform' %>
-      <% elsif @rsvp.is_going == false %>
-        <%= render 'rsvps/notgoingform' %>
-      <% else %>
-        <%= render 'rsvps/form' %>
+    <% if current_user %>
+      <% if @event.user != current_user %>
+        <% if @rsvp.is_going == true %>
+          <%= render 'rsvps/goingform' %>
+        <% elsif @rsvp.is_going == false %>
+          <%= render 'rsvps/notgoingform' %>
+        <% else %>
+          <%= render 'rsvps/form' %>
+        <% end %>
+        <hr />
       <% end %>
+    <% else %>
+      <h2>Want to go?</h2>
+      <%= link_to "Sign Up", signup_path, { :class =>"button", :style => "margin-left: 20px;" } %>
       <hr />
     <% end %>
     <div>
       <h2>Hosted By</h2>
-      <p><%= link_to @event.user.to_s, @event.user %></p>
+      <p><%= current_user ? link_to(@event.user.to_s, @event.user) : @event.user.to_s %></p>
     </div>
     <% numGoing = @event.attendies_going.count %>
     <% numNotGoing = @event.attendies_not_going.count %>
@@ -21,7 +27,7 @@
       <h2><%= "#{numGoing} going" %></h2>
       <hr />
       <% @event.attendies_going.each do |attendy| %>
-          <p><%= link_to attendy.to_s, attendy %></p>
+          <p><%= current_user ? link_to(attendy.to_s, attendy) : attendy.to_s %></p>
       <% end %>
     </div>
     <% end %>
@@ -33,7 +39,7 @@
       <h2><%= "#{numNotGoing} not going" %></h2>
       <hr />
       <% @event.attendies_not_going.each do |attendy| %>
-          <p><%= link_to attendy.to_s, attendy %></p>
+          <p><%= current_user ? link_to(attendy.to_s, attendy) : attendy.to_s %></p>
       <% end %>
     </div>
     <% end %>
