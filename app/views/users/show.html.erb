@@ -17,6 +17,7 @@
     <hr />
     <%= link_to 'Change Password', changepassword_user_path(@user), { :class=>"button", :id=>"changePasswordButton"} %>
   <% end %>
+  <% if @user.events.count > 0 %>
   <hr />
   <div>
     <h2>Hosted Events</h2>
@@ -28,4 +29,5 @@
     <% end %>
     </ul>
   </div>
+  <% end %>
 </div>
