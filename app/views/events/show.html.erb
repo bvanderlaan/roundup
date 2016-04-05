@@ -12,7 +12,7 @@
     <% end %>
     <div>
       <h2>Hosted By</h2>
-      <p><%= @event.user.to_s %></p>
+      <p><%= link_to @event.user.to_s, @event.user %></p>
     </div>
     <% numGoing = @event.attendies_going.count %>
     <% numNotGoing = @event.attendies_not_going.count %>
@@ -21,7 +21,7 @@
       <h2><%= "#{numGoing} going" %></h2>
       <hr />
       <% @event.attendies_going.each do |attendy| %>
-          <p><%= attendy.to_s %></p>
+          <p><%= link_to attendy.to_s, attendy %></p>
       <% end %>
     </div>
     <% end %>
@@ -33,7 +33,7 @@
       <h2><%= "#{numNotGoing} not going" %></h2>
       <hr />
       <% @event.attendies_not_going.each do |attendy| %>
-          <p><%= attendy.to_s %></p>
+          <p><%= link_to attendy.to_s, attendy %></p>
       <% end %>
     </div>
     <% end %>
