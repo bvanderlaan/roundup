@@ -1,0 +1,18 @@
+<div class="datetime">
+  <time datetime=<%= "#{event.startdatetime}"%>>
+    <p class="date"><%= event.startdatetime.strftime("%A, %B %e") %></p>
+    <p class="time">
+      <%= event.startdatetime.strftime("%l:%M") %>
+      <span class="ampm"><%= event.startdatetime.strftime("%p") %></span>
+    </p>
+  </time>
+</div>
+<% if current_user && current_user == event.user %>
+<div class="controls">
+    <p><%= link_to 'Edit', edit_event_path(event), { :class=>"button" } %> 
+       <%= link_to 'Destroy', event, method: :delete, :class=>"button", data: { confirm: 'Are you sure?' } %></p>
+</div>
+<% end %>
+<div class="title">
+  <h2><%= link_to "#{event.title}", event %></h2>
+</div>
