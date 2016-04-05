@@ -20,12 +20,16 @@ ul#eventlist li {
 	padding: 0;
 }
 
-ul#eventlist li div {
+ul#eventlist li div div {
 	padding: 16px 16px 12px;
 }
 
-ul#eventlist li div:first-child {
+ul#eventlist li div div:first-child {
 	padding-right: 0px;
+}
+
+ul#eventlist li div.oldevent {
+	background-color: #E0E0E0;
 }
 
 ul#eventlist .datetime {

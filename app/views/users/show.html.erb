@@ -13,8 +13,19 @@
     <%= @user.email %>
   </p>
   <% end %>
-  <hr />
   <% if current_user && current_user == @user %>
-      <%= link_to 'Change Password', changepassword_user_path(@user), { :class=>"button", :id=>"changePasswordButton"} %>
+    <hr />
+    <%= link_to 'Change Password', changepassword_user_path(@user), { :class=>"button", :id=>"changePasswordButton"} %>
+  <% end %>
+  <hr />
+  <div>
+    <h2>Hosted Events</h2>
+    <ul id="eventlist">
+    <% @user.events.order(startdatetime: :desc).each do |event| %>
+      <li>
+        <%= render 'events/event', :event => event %>
+      </li>
     <% end %>
+    </ul>
+  </div>
 </div>
