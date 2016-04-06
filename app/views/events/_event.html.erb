@@ -1,5 +1,6 @@
 <% is_old_event = event.startdatetime < DateTime.now %>
 <% has_rsvp = current_user && current_user.rsvps.exists?(event_id: event.id) %>
+<% num_going = event.rsvps.where( is_going: true ).count %>
 <div <%= is_old_event ? "class=oldevent, eventCard" : "class=eventCard" %> >
   <div <%= has_rsvp ? "class=sliver" : "" %> >
   </div>
@@ -21,6 +22,7 @@
     <% end %>
     <div class="title">
       <h2><%= link_to "#{event.title}", event %></h2>
+      <%= num_going > 0 ? "#{pluralize(num_going, 'person', 'people') } going" : "" %>
     </div>
     <div style="clear:both; padding: 0px;"></div>
     <% if ( has_rsvp ) %>
