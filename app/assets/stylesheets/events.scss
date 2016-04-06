@@ -210,6 +210,23 @@ ul#eventlist .datetime {
 	height: 100px;
 }
 
+#rsvpEvents {
+	display: none;
+}
+
+#tabs ul {
+	padding: 0px;	
+}
+
+#tabs ul li {
+	display: inline;
+	cursor: pointer;
+}
+
+#tabs ul li h2 {
+	margin: 5px;
+}
+
 .roundupform input[type="email"],
 .roundupform input[type="password"],
 .roundupform input[type="text"] {

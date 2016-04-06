@@ -19,8 +19,13 @@
   <% end %>
   <% if @user.events.count > 0 %>
   <hr />
-  <div>
-    <h2>Hosted Events</h2>
+  <div id="tabs">
+    <ul>
+      <li><h2 class="button">Hosted Events</h2></li>
+      <li><h2 class="button">Events I've RSVP'ed</h2></li>
+    </ul>
+  </div>
+  <div id="hostedEvents">
     <ul id="eventlist">
     <% @user.events.order(startdatetime: :desc).each do |event| %>
       <li>
@@ -29,5 +34,24 @@
     <% end %>
     </ul>
   </div>
+  <div id="rsvpEvents">
+    <ul id="eventlist">
+    <% @user.attending_events.order(startdatetime: :asc).each do |event| %>
+      <li>
+        <%= render 'events/event', :event => event %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
   <% end %>
 </div>
+<script>
+  $(function() {
+    $('#tabs > ul > li').click(function() {
+      var ix = $(this).index();
+      
+      $('#hostedEvents').toggle( ix === 0 );
+      $('#rsvpEvents').toggle( ix === 1 );
+    });
+  });
+</script>
