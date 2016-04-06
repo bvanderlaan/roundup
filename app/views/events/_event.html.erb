@@ -1,7 +1,7 @@
 <% is_old_event = event.startdatetime < DateTime.now %>
 <% has_rsvp = current_user && current_user.rsvps.exists?(event_id: event.id) %>
 <% num_going = event.rsvps.where( is_going: true ).count %>
-<div <%= is_old_event ? "class=oldevent, eventCard" : "class=eventCard" %> >
+<div class="<%= is_old_event ? "oldevent eventCard" : "eventCard" %>" >
   <div <%= has_rsvp ? "class=sliver" : "" %> >
   </div>
   <div class="eventCardInfo">
