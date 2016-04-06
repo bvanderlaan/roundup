@@ -59,3 +59,7 @@
 	float: right;
 	margin-right: 8px;
 }
+
+h1 {
+	line-height: 1em;
+}
