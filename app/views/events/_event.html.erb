@@ -22,7 +22,11 @@
     <% end %>
     <div class="title">
       <h2><%= link_to "#{event.title}", event %></h2>
-      <%= num_going > 0 ? "#{pluralize(num_going, 'person', 'people') } going" : "" %>
+      <% if is_old_event %>
+        <%= num_going > 0 ? "#{pluralize(num_going, 'person', 'people') } went" : "" %>
+      <% else %>
+        <%= num_going > 0 ? "#{pluralize(num_going, 'person', 'people') } going" : "" %>
+      <% end %>
     </div>
     <div style="clear:both; padding: 0px;"></div>
     <% if ( has_rsvp ) %>
