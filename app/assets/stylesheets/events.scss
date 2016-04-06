@@ -169,6 +169,15 @@ ul#eventlist .datetime {
 
 .controls {
 	float: right;
+	padding: 5px 5px 0 0!important;
+}
+
+.eventrsvpbadge {
+	color: #628CBC;
+	font-weight: bold;
+	padding: 0!important;
+	margin-left: 16px;
+	margin-bottom: 5px;
 }
 
 .roundupform {
