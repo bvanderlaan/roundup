@@ -1,32 +1,37 @@
 <% is_old_event = event.startdatetime < DateTime.now %>
-<div <%= is_old_event ? "class=oldevent" : "" %> >
-  <div class="datetime">
-    <time datetime=<%= "#{event.startdatetime}"%>>
-      <p class="date"><%= event.startdatetime.strftime("%A, %B %e") %></p>
-      <p class="time">
-        <%= event.startdatetime.strftime("%l:%M") %>
-        <span class="ampm"><%= event.startdatetime.strftime("%p") %></span>
-      </p>
-    </time>
+<% has_rsvp = current_user && current_user.rsvps.exists?(event_id: event.id) %>
+<div <%= is_old_event ? "class=oldevent, eventCard" : "class=eventCard" %> >
+  <div <%= has_rsvp ? "class=sliver" : "" %> >
   </div>
-  <% if current_user && current_user == event.user %>
-  <div class="controls">
-      <%= link_to 'Edit', edit_event_path(event), { :class=>"button" } %> 
-      <%= link_to 'Destroy', event, method: :delete, :class=>"button", data: { confirm: 'Are you sure?' } %>
-  </div>
-  <% end %>
-  <div class="title">
-    <h2><%= link_to "#{event.title}", event %></h2>
-  </div>
-  <div style="clear:both; padding: 0px;"></div>
-  <% if ( current_user && current_user.rsvps.exists?(event_id: event.id) ) %>
-  <div class="eventrsvpbadge">
-    <% rsvp = current_user.rsvps.find_by(event_id: event.id) %>
-    <% if is_old_event %>
-      <%= rsvp.is_going ? "You went." : "You couldn't make it." %>
-    <% else %>
-      <%= rsvp.is_going ? "Your going!" : "You can't make it." %>
+  <div class="eventCardInfo">
+    <div class="datetime">
+      <time datetime=<%= "#{event.startdatetime}"%>>
+        <p class="date"><%= event.startdatetime.strftime("%A, %B %e") %></p>
+        <p class="time">
+          <%= event.startdatetime.strftime("%l:%M") %>
+          <span class="ampm"><%= event.startdatetime.strftime("%p") %></span>
+        </p>
+      </time>
+    </div>
+    <% if current_user && current_user == event.user %>
+    <div class="controls">
+        <%= link_to 'Edit', edit_event_path(event), { :class=>"button" } %> 
+        <%= link_to 'Destroy', event, method: :delete, :class=>"button", data: { confirm: 'Are you sure?' } %>
+    </div>
+    <% end %>
+    <div class="title">
+      <h2><%= link_to "#{event.title}", event %></h2>
+    </div>
+    <div style="clear:both; padding: 0px;"></div>
+    <% if ( has_rsvp ) %>
+    <div class="eventrsvpbadge">
+      <% rsvp = current_user.rsvps.find_by(event_id: event.id) %>
+      <% if is_old_event %>
+        <%= rsvp.is_going ? "You went." : "You couldn't make it." %>
+      <% else %>
+        <%= rsvp.is_going ? "Your going!" : "You can't make it." %>
+      <% end %>
+    </div>
     <% end %>
   </div>
-  <% end %>
 </div>

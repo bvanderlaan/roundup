@@ -20,20 +20,13 @@ ul#eventlist li {
 	padding: 0;
 }
 
-ul#eventlist li div div {
-	padding: 16px 16px 12px;
-}
-
-ul#eventlist li div div:first-child {
-	padding-right: 0px;
-}
-
 ul#eventlist li div.oldevent {
 	background-color: #E0E0E0;
 }
 
 ul#eventlist .datetime {
 	float: left;
+	padding: 16px 0px 16px 12px;
 }
 
 .datetime p {
@@ -146,6 +139,7 @@ ul#eventlist .datetime {
 
 .title {
 	overflow:hidden;
+	padding: 16px 16px 12px;
 }
 
 .title h2 {
@@ -169,15 +163,36 @@ ul#eventlist .datetime {
 
 .controls {
 	float: right;
-	padding: 5px 5px 0 0!important;
+	padding: 5px 5px 0 0;
 }
 
 .eventrsvpbadge {
 	color: #628CBC;
 	font-weight: bold;
-	padding: 0!important;
+	padding: 0;
 	margin-left: 16px;
 	margin-bottom: 5px;
+}
+
+.eventCard {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.eventCardInfo {
+	overflow: hidden;
+	margin-left: 5px;
+}
+
+.sliver {
+	background-color: #628CBC;
+	width: 10px;
+	height: 100%;
+	position: absolute;
+	float: left;
+	left: 1;
+	border-bottom-left-radius: 1px;
+	border-top-left-radius: 1px;
 }
 
 .roundupform {
