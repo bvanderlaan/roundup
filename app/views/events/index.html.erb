@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Roundup Events</h1>
+<div style="float: left;">
+  <h1>Roundup Events</h1>
+</div>
+<div style="float: right;">
+  <% if current_user %>
+    <%= link_to 'Host a New Event', new_event_path, :class=>"button" %>
+  <% end %>
+</div>
+<div style="clear: both;"></div>
 
 <ul id="eventlist">
 <% @events.each do |event| %>
@@ -9,9 +17,3 @@
   </li>
 <% end %>
 </ul>
-
-<br>
-
-<% if current_user %>
-<%= link_to 'New Event', new_event_path, :class=>"button" %>
-<% end %>
