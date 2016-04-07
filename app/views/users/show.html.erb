@@ -13,6 +13,10 @@
     <%= @user.email %>
   </p>
   <% end %>
+  <% unless ( @user.description.blank? ) %>
+  <hr />
+  <pre><%= @user.description.html_safe %></pre>
+  <% end %>
   <% if current_user && current_user == @user %>
     <hr />
     <%= link_to 'Change Password', changepassword_user_path(@user), { :class=>"button", :id=>"changePasswordButton"} %>

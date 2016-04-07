@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329023015) do
+ActiveRecord::Schema.define(version: 20160407023921) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",         limit: 255
@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(version: 20160329023015) do
     t.string   "last_name",       limit: 255
     t.string   "email",           limit: 255
     t.string   "password_digest", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "description",     limit: 65535, null: false
   end
 
   add_foreign_key "events", "users"
