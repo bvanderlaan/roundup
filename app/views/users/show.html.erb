@@ -21,7 +21,7 @@
   <hr />
   <div id="tabs">
     <ul>
-      <li><h2 class="button">Hosted Events</h2></li>
+      <li><h2 class="button depressedButton">Hosted Events</h2></li>
       <% if current_user && current_user == @user %>
       <li><h2 class="button">Events I've RSVP'ed</h2></li>
       <% end %>
@@ -56,6 +56,11 @@
       
       $('#hostedEvents').toggle( ix === 0 );
       $('#rsvpEvents').toggle( ix === 1 );
+
+      $('#tabs > ul').children().eq(ix).children().first().addClass("depressedButton");
+
+      $('#tabs > ul').children().eq(ix).siblings().children().first().removeClass("depressedButton");
+
     });
   });
 </script>

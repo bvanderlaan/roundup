@@ -257,6 +257,13 @@ label {
     }
 }
 
+.depressedButton {
+    background: #0A3882;
+    background: -webkit-gradient(linear,left top,left bottom,from(#2D5CA8),to(#0A3882));
+    background: -moz-linear-gradient(top,#2D5CA8,#0A3882);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF2D5CA8', endColorstr='#FF0A3882')";
+}
+
 #backButton {
 	float: right;
 }
