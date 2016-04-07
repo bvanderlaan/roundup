@@ -22,7 +22,9 @@
   <div id="tabs">
     <ul>
       <li><h2 class="button">Hosted Events</h2></li>
+      <% if current_user && current_user == @user %>
       <li><h2 class="button">Events I've RSVP'ed</h2></li>
+      <% end %>
     </ul>
   </div>
   <div id="hostedEvents">
@@ -34,6 +36,7 @@
     <% end %>
     </ul>
   </div>
+  <% if current_user && current_user == @user %>
   <div id="rsvpEvents">
     <ul id="eventlist">
     <% @user.attending_events.order(startdatetime: :asc).each do |event| %>
@@ -43,6 +46,7 @@
     <% end %>
     </ul>
   </div>
+  <% end %>
   <% end %>
 </div>
 <script>
