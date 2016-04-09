@@ -68,7 +68,7 @@
       <p><%= @event.location %></p>
     </div>
     <hr />
-    <pre class="description"><%= @event.description %></pre>
+    <pre class="description"><%= @event.description.html_safe %></pre>
   </div>
   <div style="clear: both;"></div>
 </div>
