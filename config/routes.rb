@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments, only: [:new, :create, :destroy]
   resources :rsvps, only: [:new, :create, :update]
 
   resources :sessions, only: [:new, :create, :destroy]

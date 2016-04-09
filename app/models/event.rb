@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
 	belongs_to :user
 	has_many :rsvps, dependent: :destroy
 	has_many :attendies, :class_name => 'User', :foreign_key => 'user_id', :through => :rsvps, :source => :user
+	has_many :comments, dependent: :destroy
 	
 	validates :title, presence: true,
 	          length: { maximum: 72 }

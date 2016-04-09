@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407023921) do
+ActiveRecord::Schema.define(version: 20160409031306) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "event_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.text     "body",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "title",         limit: 255
@@ -47,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160407023921) do
     t.text     "description",     limit: 65535, null: false
   end
 
+  add_foreign_key "comments", "events"
+  add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "rsvps", "events"
   add_foreign_key "rsvps", "users"

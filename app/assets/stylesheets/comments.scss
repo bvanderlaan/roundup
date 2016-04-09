@@ -1,0 +1,36 @@
+// Place all the styles related to the comment controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#commentSubmitButton {
+	float: right;
+	margin-right: 9%;
+}
+
+ul#commentlist {
+	list-style: none;
+	margin: 18px 0 18px;
+	padding: 0;
+}
+
+ul#commentlist li {
+	line-height: 1.2;
+	border-bottom: 1px solid #DDDDDD;
+	overflow: hidden;
+	margin: 0;
+	padding: 10px;
+}
+
+ul#commentlist li:last-child {
+	border-bottom: none;
+}
+
+ul#commentlist pre {
+	width: 100%;
+	word-wrap: break-word;
+	margin: 0px;
+}
+
+ul#commentlist p {
+	font-weight: bold;
+	margin: 0px;
+}
