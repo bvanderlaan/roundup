@@ -24,10 +24,19 @@ ul#commentlist li:last-child {
 	border-bottom: none;
 }
 
-ul#commentlist div {
+ul#commentlist div.commentcard {
 	width: 100%;
 	word-wrap: break-word;
 	margin: 0px;
+}
+
+ul#commentlist div.commentdetails {
+	float: left;
+	width: 80%;
+}
+
+ul#commentlist div.controls {
+	float: right;
 }
 
 ul#commentlist li p.username,
