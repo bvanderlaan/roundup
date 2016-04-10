@@ -16,8 +16,8 @@ class EventsController < ApplicationController
     else
       @rsvp = Rsvp.new
       @rsvp.is_going = nil
-      @comment = Comment.new
     end
+    @comment = Comment.new
   end
 
   # GET /events/new
