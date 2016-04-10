@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Automatically converts links in strings to an actual link. https://rubygems.org/gems/rails_autolink/versions/1.1.6
+gem 'rails_autolink', '~> 1.1.6'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

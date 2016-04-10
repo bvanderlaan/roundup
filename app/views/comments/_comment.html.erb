@@ -1,5 +1,5 @@
 <p><%= current_user ? link_to( comment.user.to_s, comment.user ) : comment.user.to_s %></p>
-<pre><%= comment.body.html_safe %></pre>
+<pre><%= auto_link( comment.body.html_safe ) %></pre>
 <time datetime=<%= "#{comment.created_at}"%>>
 	<p class="date"><%= comment.created_at.strftime("%B %e, %Y") %></p>
 </time>
