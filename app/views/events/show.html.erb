@@ -70,12 +70,14 @@
     <hr />
     <pre class="description"><%= @event.description.html_safe %></pre>
     <hr />
+    <% if current_user %>
     <% if @event.comments.count == 0 %>
       <h2>Hey <%= current_user.first_name %>, get the converstation started!</h2>
     <% else %>
       <h2>How was the Roundup?</h2>
     <% end %>
     <%= render 'comments/form' %>
+    <% end %>
     <ul id="commentlist">
     <% @event.comments.each do |comment| %>
       <li>
