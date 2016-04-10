@@ -24,13 +24,17 @@ ul#commentlist li:last-child {
 	border-bottom: none;
 }
 
-ul#commentlist pre {
+ul#commentlist div {
 	width: 100%;
 	word-wrap: break-word;
 	margin: 0px;
 }
 
-ul#commentlist p {
+ul#commentlist li p.username,
+ul#commentlist li p.date {
 	font-weight: bold;
+}
+
+ul#commentlist li p {
 	margin: 0px;
 }

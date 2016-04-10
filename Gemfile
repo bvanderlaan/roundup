@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Automatically converts links in strings to an actual link. https://rubygems.org/gems/rails_autolink/versions/1.1.6
 gem 'rails_autolink', '~> 1.1.6'
 
+# Markdown Engine Wrapper - Use Your Markdown Library of Choice. https://rubygems.org/gems/markdown
+gem 'markdown', '~> 1.2'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
