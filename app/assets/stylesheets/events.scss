@@ -7,7 +7,7 @@ ul#eventlist {
 	border: 1px solid #DDDDDD;
 	border-radius: 3px;
 	list-style: none;
-	margin: 0 0 18px;
+	margin: 20px 0 18px;
 	padding: 0;
 }
 
@@ -287,4 +287,26 @@ label {
 
 #no_events_message #no_events_message_logo_img {
 	margin-top: 10px;
+}
+
+#welcome {
+	margin-bottom: 20px;
+}
+
+#welcome div:not(:last-child) {
+	float: left;
+	width: 40%;
+	margin-right: 10px;
+}
+
+#welcome span {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 130px;
+	text-decoration: underline;
+}
+
+h2 {
+	margin-bottom: 0px;
 }

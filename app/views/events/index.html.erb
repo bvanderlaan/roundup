@@ -1,14 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<div style="float: left;">
-  <h1>Roundup Events</h1>
+<h2>Roundup Events</h2>
+<div id="welcome">
+  <div>
+    <p>
+      Here you will find a list of upcomming events being hosted by your fellow
+      employees. They will range from Lunch n' Learns, Talks, Presentations, Meetings,
+      or casual get togethers. In short you will find gatherings where you can round up
+      colleges to talk and share on whatever topics you wish.
+    </p>
+  </div>
+  <div>
+    <p>
+      If an event on a given topic is not already scheduled that you wish to talk
+      about and have some knowlage to share feel free to host your own event.
+    </p>
+    <span>
+      <% if current_user %>
+        <%= link_to 'Host a New Event', new_event_path, :class=>"button" %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path, { :class =>"button" } %>
+        <%= link_to "Log In", login_path, { :class =>"button" } %>
+      <% end %>
+    </span>
+  </div>
+  <div style="clear: both;"></div>
 </div>
-<div style="float: right;">
-  <% if current_user %>
-    <%= link_to 'Host a New Event', new_event_path, :class=>"button" %>
-  <% end %>
-</div>
-<div style="clear: both;"></div>
 <hr />
 <% if @events.count == 0 %>
   <div id="no_events_message">
