@@ -267,3 +267,24 @@ label {
 #backButton {
 	float: right;
 }
+
+#no_events_message {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 1024px) {
+	#no_events_message {
+		width: 80%;
+	}	
+}
+
+#no_events_message div:not(:last-child) {
+	float: left;
+	margin-right: 10px;
+}
+
+#no_events_message #no_events_message_logo_img {
+	margin-top: 10px;
+}

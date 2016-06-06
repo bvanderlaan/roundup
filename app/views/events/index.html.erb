@@ -9,11 +9,30 @@
   <% end %>
 </div>
 <div style="clear: both;"></div>
-
-<ul id="eventlist">
-<% @events.each do |event| %>
-  <li>
-    <%= render 'event', :event => event %>
-  </li>
+<hr />
+<% if @events.count == 0 %>
+  <div id="no_events_message">
+    <div>
+      <%= image_tag 'logo.png', size: "100", id: 'no_events_message_logo_img' %>
+    </div>
+    <div>
+      <h3>There are no upcomming events</h3>
+      <p>Get the ball rolling by hosting your own event.</p>
+      <% if current_user %>
+        <%= link_to 'Host a New Event', new_event_path, :class=>"button" %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path, { :class =>"button" } %>
+        <%= link_to "Log In", login_path, { :class =>"button" } %>
+      <% end %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+<% else %>
+  <ul id="eventlist">
+  <% @events.each do |event| %>
+    <li>
+      <%= render 'event', :event => event %>
+    </li>
+  <% end %>
 <% end %>
 </ul>
